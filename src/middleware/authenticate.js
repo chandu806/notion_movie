@@ -15,23 +15,22 @@ module.exports = async (req, res, next) => {
 
     if (!req.headers.authorization)
         return res.status(400).send({
-            message: "authorization token was not provided or was not valid",
+            message: "authorization  was not valid",
         });
 
 
     if (!req.headers.authorization.startsWith("Bearer "))
         return res.status(400).send({
-            message: "authorization token was not provided or was not valid",
+            message: "authorization was not valid",
         });
 
     const token = req.headers.authorization.split(" ")[1];
-
     let admin;
     try {
         admin = await verifyToken(token);
     } catch (err) {
         return res.status(400).send({
-            message: "authorization token was not provided or was not valid",
+            message: "authorization was not valid",
         });
     }
 

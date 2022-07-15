@@ -1,6 +1,6 @@
 const express = require("express");
 const middleware = require("../middlewares/authenticate")
-const Movie = require("../models/movies.model");
+const Movie = require("../models/movie.model");
 
 const route= express();
 

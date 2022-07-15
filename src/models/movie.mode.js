@@ -4,7 +4,7 @@ const movieSchema= new mongoose.Schema({
     movieName:{type:String ,require:true },
     rating:{type:Number,require:true},
     cast:{type:Array , require:true},
-    genre:{type:String , require:true},
+    genrate:{type:String , require:true},
     releseDate:{type:Date,require:true },
 },{
     versionKey:false,

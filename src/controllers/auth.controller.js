@@ -23,7 +23,7 @@ const register = async (req, res) => {
         let admin = await Admin.findOne({ email: req.body.email }).lean().exec();
 
         if (admin)
-            return res.status(400).send({ message: "Please try another email" });
+            return res.status(400).send({ message: "Please try another" });
 
         admin = await Admin.create(req.body);
 
@@ -53,7 +53,7 @@ const login = async (req, res) => {
         if (!admin)
             return res
                 .status(400)
-                .send({ message: "Please try another email or password" });
+                .send({ message: "Please try another email" });
 
         const match = admin.checkPassword(req.body.password);
 
